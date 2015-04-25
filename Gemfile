@@ -32,7 +32,7 @@ gem 'devise'
 gem 'annotate'
 gem 'table_print'
 
-
+gem 'rails_12factor', group: :production
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
