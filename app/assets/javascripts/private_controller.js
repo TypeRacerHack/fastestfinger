@@ -1,5 +1,3 @@
-//= require jquery
-
 $(document).ready(function(){
   
   //Creo una variable con cada uno de los tres parrafos predefinidos
@@ -21,6 +19,7 @@ $(document).ready(function(){
   $("#current-score").text(correct)
   
   $("#start").click(function(){
+    $("#typer").attr("disabled");
     randomWord = Math.floor(Math.random()*3);
     i = 1
     correct = 0
@@ -73,12 +72,12 @@ $(document).ready(function(){
         $("#aciertos").text("").append(correct)
         if(i==ztring.length + 1){
           clearInterval(contador);
-          $("#typer").attr("disabled");
           $("#start").show();
           for (var k=1; k<=10; k++){
             var maxScores = parseInt($("#score"+k).html());
             if(tpm>maxScores){
-              $("#score"+k+1).text.(tpm);
+              debugger
+              $("#score"+(k+1)).text(maxScores);
               $("#score"+k).text(tpm);
               k = 11;
             }
@@ -89,3 +88,4 @@ $(document).ready(function(){
    }
 })
 })
+   
