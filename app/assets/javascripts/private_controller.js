@@ -1,4 +1,4 @@
-= require jquery
+//= require jquery
 
 $(document).ready(function(){
   var randomWord = Math.floor(Math.random()*3); //Genero un número aleatorio que me define cual de los tres parrafos predefinidos se va a desplegar
