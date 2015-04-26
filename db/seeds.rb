@@ -6,9 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-12.times do |i|
-  User.create(
+users = 12.times do |i|
+  user = User.create(
     email: "prueba#{i}@dispostable.com",
     password: "password",
   )
+  10.times do 
+  Score.create(
+  	user: user,
+  	highscore: Faker::Number.number(2),
+  	)
+  end
 end
