@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426001202) do
+ActiveRecord::Schema.define(version: 20150426115818) do
+
+  create_table "puntajes", force: :cascade do |t|
+    t.integer  "score"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "puntajes", ["user_id"], name: "index_puntajes_on_user_id"
 
   create_table "scores", force: :cascade do |t|
     t.integer  "user_id"
