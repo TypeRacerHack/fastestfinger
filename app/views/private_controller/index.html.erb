@@ -3,9 +3,6 @@
   <div class="score">Palabras por minuto: <span id="current-score"></span> ppm</div>
   <div>Tiempo: <span id="timer"></span></div>
   <div>Palabras correctas:<span id="aciertos"> </span></div>
-  <%= form_for([@user, @user.score.build]) do |f| %>
-      <%= f.submit %>
-  <% end %>
-     %>
+  
   <p id="countdown"></p>
   
