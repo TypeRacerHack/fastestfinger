@@ -5,6 +5,11 @@ class WelcomeController < ApplicationController
   		render 'private_controller/index'
   	else 
   		render 'welcome_controller/index'
+
+  	
+@user= Users.all	
+  	
+
   end 
 end
 end
