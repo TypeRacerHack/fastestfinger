@@ -16,10 +16,10 @@ $(document).ready(function(){
   var contador
   var tpm
   var ztring
+  var maxScore
   $("#current-score").text(correct)
   
   $("#start").click(function(){
-    $("#typer").attr("disabled");
     randomWord = Math.floor(Math.random()*3);
     i = 1
     correct = 0
@@ -71,16 +71,17 @@ $(document).ready(function(){
         $("#current-score").text(tpm);
         $("#aciertos").text("").append(correct)
         if(i==ztring.length + 1){
+          $("#typer").attr("disabled", true);
           clearInterval(contador);
           $("#start").show();
           for (var k=1; k<=10; k++){
-            var maxScores = parseInt($("#score"+k).html());
-            if(tpm>maxScores){
-              debugger
-              $("#score"+(k+1)).text(maxScores);
+            var currentScoreTable = parseInt($("#score"+k).html());
+            if(tpm>currentScoreTable){
+              $("#score"+(k+1)).text(currentScoreTable);
               $("#score"+k).text(tpm);
               k = 11;
             }
+          maxScore = parseInt($("#score1").text())
           }  
         }
         $("span:nth-child(" + i + ")").addClass("current");
@@ -88,4 +89,3 @@ $(document).ready(function(){
    }
 })
 })
-   
